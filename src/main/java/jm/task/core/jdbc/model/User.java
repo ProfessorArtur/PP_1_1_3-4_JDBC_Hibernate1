@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table
+@Table (name = "users")
 public class User {
     @Id
     private Long id;
@@ -15,11 +15,21 @@ public class User {
     @Column
     private String lastName;
 
-    @Column
+    @Column (name = "age")
     private Byte age;
 
     public User() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+               "id=" + id +
+               ", имя='" + name + '\'' +
+               ", фамилия='" + lastName + '\'' +
+               ", возраст=" + age +
+               '}';
     }
 
     public User(String name, String lastName, Byte age) {
